@@ -1,9 +1,11 @@
 ﻿namespace Shop.Web.Data
 {
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
-    using Shop.Web.Data.Entities;
+    using Entities;
+    using Shop.Web.Models;
 
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext<User>
     {
         public DbSet<Product> Products { get; set; }
 
