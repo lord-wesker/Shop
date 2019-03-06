@@ -12,6 +12,19 @@
         [Required]
         public string Name { get; set; }
 
+        public string ImageFullPath
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(this.ImageUrl))
+                {
+                    return null;
+                }
+
+                return $"https://shopweb20190219113137.azurewebsites.net{this.ImageUrl.Substring(1)}";
+            }
+        }
+
         [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
         public decimal Price { get; set; }
 
